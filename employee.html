@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 15px 300px;
+            font-size: 17px;
+            padding: 8px;
+        }
+        
+        .container{
+            background-color: rgb(250, 246, 246);
+            padding: 5px 20px 15px 20px;
+            border: 2px solid black;
+            border-radius: 0px 0px 5px 5px;
+        }
+        
+        input[type="text"],
+        select,
+        textarea{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            margin: 10px;
+        }
+        input[type="number"],
+        select,
+        textarea{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            margin: 10px;
+        }  
+        
+        fieldset{
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+        
+        .main_heading{
+            text-align: center;
+            background-color:aquamarine;
+            padding: 25px;
+            margin: 0px;
+            border-radius: 5px 5px 0px 0px;
+            border:2px solid black;
+            width: 100%;
+        }
+        
+        input[type="submit"]{
+            background-color:rgb(36, 255, 36);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px ;
+            cursor: pointer;
+            width: 20%;
+        }
+        input[type="submit"]:hover{
+            background-color: rgb(86, 230, 46);
+        }
+        form{display: inline;}
+        
+    </style>
+    <title>Employee Details</title>
+</head>
+
+<body>
+    <h1 class="main_heading">Employee Details</h1>
+    <div class="container">
+        <form action="/newemployee", method="post"> {% csrf_token %}
+            <p>Name : 
+                <input type="text" name="name" placeholder="Enter Full Name" required></p>                   
+            <p>Phone : 
+                <input type="number" name="phone" placeholder="Enter phone number" min="6000000000" max="9999999999" required></p>
+            <p>Email : 
+                <input type="text" name="email" placeholder="Enter email"required></p>
+            <p>Resume:
+                <input type="file" name="cv"></p>
+            <input type="submit" value="submit">            
+        </form>
+        <form action="/employee2",method="post">{% csrf_token %}
+            <input type="submit" value="Back" style="background: red;">            
+        </form>
+    </div>
+</body>
+
+</html>

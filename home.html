@@ -1,0 +1,91 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hiring Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        #nav{
+            background-color:white;
+            text-align: left;
+            padding: 0px;
+        }
+        
+        #title{
+            background-color:#5851D3;
+            padding: 10px;
+            color: white;
+        }
+        .bttn{
+            background-color: #5851D3;
+            color: white;
+        }
+        .btm{
+            background-color: white;
+            color: black;
+        }
+        .btm:hover{
+            background-color: rgb(223, 216, 216);
+            color: black;
+        }
+        .bttn:hover{
+            background-color: rgb(223, 216, 216);
+            color: black;
+        }
+        #p1{
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="nav">
+        
+        <ul class="nav justify-content ">
+            <li class="nav-item">
+                <h2 style="margin:20px;">Hire In</h2>
+            </li>
+            <li class="nav-item">
+                <form action="jobs", method="post">{% csrf_token %}
+                <button class="btn bttn me-md-2" type="submit" style="margin:20px;">Find jobs</button>
+                </form>
+            </li>
+            <li class="nav-item">
+                <form action="company", method="post">{% csrf_token %}
+                <button class="btn bttn me-md-2" type="submit" style="margin: 20px;">Hire Talents</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div id="title">
+      <center>
+         <h1>Where Talent Meets Opportunity</h1>
+         <h3 id="p1">Remember, here at Hire In, we're dedicated to making your job search experience seamless, efficient, and rewarding.</h3> 
+         <form action="jobs", method="post">{% csrf_token %}
+         <button class="btn btm me-md-2" type="submit" style="margin:20px;">Find jobs</button>
+         </form>
+         <form action="company", method="post">{% csrf_token %}
+         <button class="btn btm me-md-2" type="submit" style="margin:20px;">Hire Talents</button>
+         </form>
+      </center>
+    </div>
+    <center>
+    <img src="{% static 'hiring1.jpg' %}" alt="Image not found" width="1000px" height="800px">
+</center> 
+
+    <script>
+        if ('{{set}}' == 1)
+        {
+            alert('{{alert}}')
+        }
+        else if ('{{set}}' == 2)
+        {
+            alert('{{alert2}}')
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
